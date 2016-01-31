@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2016-01-31T11:11:41Z" product-name="qxsandbox">
+		<header/>
+		<body>
+			<trans-unit id="tx_qxsandbox_domain_model_event">
+				<source>Event</source>
+			</trans-unit>
+			<trans-unit id="tx_qxsandbox_domain_model_event.namespace">
+				<source>Namespace</source>
+			</trans-unit>
+			<trans-unit id="tx_qxsandbox_domain_model_event.event">
+				<source>Event</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
