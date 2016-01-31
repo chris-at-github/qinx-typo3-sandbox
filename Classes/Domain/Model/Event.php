@@ -90,5 +90,7 @@ class Event extends Sandbox {
 	 */
 	public function getEventTypes() {
 		$settings = $this->getSettings();
+
+		return $settings;
 	}
 }

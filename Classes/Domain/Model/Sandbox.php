@@ -66,7 +66,9 @@ class Sandbox extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function getSettings() {
 		if(isset($this->settings) === false) {
-			$configurationManager = $this->getObjectManager('TYPO3\CMS\Extbase\Configuration\ConfigurationManager');
+			$this->settings = $this->getObjectManager()->get('TYPO3\\CMS\\Extbase\\Configuration\\ConfigurationManager')->getConfiguration(
+				\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'Qxsandbox', 'Frontend'
+			);
 		}
 
 		return $this->settings;
