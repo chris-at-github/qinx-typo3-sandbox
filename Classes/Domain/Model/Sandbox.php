@@ -27,68 +27,48 @@ namespace Qinx\Qxsandbox\Domain\Model;
 	 ***************************************************************/
 
 /**
- * Event
+ * Sandbox
  */
-class Event extends Sandbox {
+class Sandbox extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-	 * namespace
+	 * objectManager
 	 *
-	 * @var string
+	 * @var \TYPO3\CMS\Extbase\Object\ObjectManager
 	 */
-	protected $namespace = '';
+	protected $objectManager;
 
 	/**
-	 * event
+	 * Plugin TypoScript Settings
 	 *
-	 * @var string
+	 * @var array $settings
 	 */
-	protected $event = '';
+	protected $settings;
 
 	/**
-	 * Returns the namespace
+	 * return an instance of objectManager
 	 *
-	 * @return string $namespace
+	 * @param none
+	 * @return \TYPO3\CMS\Extbase\Object\ObjectManager
 	 */
-	public function getNamespace() {
-		return $this->namespace;
+	public function getObjectManager() {
+		if(($this->objectManager instanceof \TYPO3\CMS\Extbase\Object\ObjectManager) === false) {
+			$this->objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
+		}
+
+		return $this->objectManager;
 	}
 
 	/**
-	 * Sets the namespace
-	 *
-	 * @param string $namespace
-	 * @return void
-	 */
-	public function setNamespace($namespace) {
-		$this->namespace = $namespace;
-	}
-
-	/**
-	 * Returns the event
-	 *
-	 * @return string $event
-	 */
-	public function getEvent() {
-		return $this->event;
-	}
-
-	/**
-	 * Sets the event
-	 *
-	 * @param string $event
-	 * @return void
-	 */
-	public function setEvent($event) {
-		$this->event = $event;
-	}
-
-	/**
-	 * liefert die definierten Event-Typen
+	 * liefert die TypoScript Plugin Einstellungen
 	 *
 	 * @return array
 	 */
-	public function getEventTypes() {
-		$settings = $this->getSettings();
+	public function getSettings() {
+		if(isset($this->settings) === false) {
+			$configurationManager = $this->getObjectManager('TYPO3\CMS\Extbase\Configuration\ConfigurationManager');
+		}
+
+		return $this->settings;
 	}
 }

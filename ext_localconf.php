@@ -7,10 +7,10 @@ if (!defined('TYPO3_MODE')) {
 	'Qinx.' . $_EXTKEY,
 	'Frontend',
 	array(
-		
+		'Frontend'	=> 'index',
+		'Event'			=> 'readIn'
 	),
-	// non-cacheable actions
 	array(
-		
+		'Event' => 'readIn'
 	)
 );

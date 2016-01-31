@@ -1,5 +1,5 @@
 <?php
-namespace Qinx\Qxsandbox\Domain\Model;
+namespace Qinx\Qxsandbox\Controller;
 
 	/***************************************************************
 	 *
@@ -27,68 +27,7 @@ namespace Qinx\Qxsandbox\Domain\Model;
 	 ***************************************************************/
 
 /**
- * Event
+ * SandboxController
  */
-class Event extends Sandbox {
-
-	/**
-	 * namespace
-	 *
-	 * @var string
-	 */
-	protected $namespace = '';
-
-	/**
-	 * event
-	 *
-	 * @var string
-	 */
-	protected $event = '';
-
-	/**
-	 * Returns the namespace
-	 *
-	 * @return string $namespace
-	 */
-	public function getNamespace() {
-		return $this->namespace;
-	}
-
-	/**
-	 * Sets the namespace
-	 *
-	 * @param string $namespace
-	 * @return void
-	 */
-	public function setNamespace($namespace) {
-		$this->namespace = $namespace;
-	}
-
-	/**
-	 * Returns the event
-	 *
-	 * @return string $event
-	 */
-	public function getEvent() {
-		return $this->event;
-	}
-
-	/**
-	 * Sets the event
-	 *
-	 * @param string $event
-	 * @return void
-	 */
-	public function setEvent($event) {
-		$this->event = $event;
-	}
-
-	/**
-	 * liefert die definierten Event-Typen
-	 *
-	 * @return array
-	 */
-	public function getEventTypes() {
-		$settings = $this->getSettings();
-	}
+class SandboxController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 }
